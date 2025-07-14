@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Votre spécialiste en électronique</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#57b5e7',secondary:'#8dd3c7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .carousel-slide { display: none; }
+        .carousel-slide.active { display: block; }
+        .category-hover { transition: all 0.3s ease; }
+        .category-hover:hover { transform: translateY(-4px); }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+                
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Rechercher des produits..." class="w-full px-4 py-3 pl-12 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                        <div class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                            <i class="ri-search-line text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="relative cursor-pointer">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-shopping-cart-line text-xl text-gray-700"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </div>
+                    <div class="w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <i class="ri-user-line text-xl text-gray-700"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gray-100 px-6 py-3">
+            <nav class="flex items-center space-x-8">
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Smartphones</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Tablettes</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Ordinateurs</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Audio</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Accessoires</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Powerstation</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Promotions</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-96 overflow-hidden">
+            <div class="carousel-slide active" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20electronics%20store%20banner%20with%20smartphones%20tablets%20laptops%20and%20audio%20equipment%20arranged%20elegantly%20on%20clean%20white%20background%20with%20soft%20lighting%20and%20minimal%20design%20aesthetic%20professional%20product%20photography&width=1200&height=400&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="relative h-full flex items-center px-6">
+                    <div class="max-w-2xl text-white">
+                        <h1 class="text-4xl font-bold mb-4">Découvrez nos dernières innovations technologiques</h1>
+                        <p class="text-xl mb-6">Smartphones, tablettes, PC et accessoires aux meilleurs prix</p>
+                        <button class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap">Découvrir maintenant</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide" style="background-image: url('https://readdy.ai/api/search-image?query=premium%20audio%20equipment%20powerstation%20and%20wireless%20accessories%20displayed%20on%20modern%20minimalist%20background%20with%20soft%20shadows%20and%20professional%20lighting%20clean%20product%20photography&width=1200&height=400&seq=hero2&orientation=landscape'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="relative h-full flex items-center px-6">
+                    <div class="max-w-2xl text-white">
+                        <h1 class="text-4xl font-bold mb-4">Audio premium et stations d'énergie</h1>
+                        <p class="text-xl mb-6">Équipez-vous avec les meilleures technologies audio et énergétiques</p>
+                        <button class="bg-secondary text-white px-8 py-3 !rounded-button font-semibold hover:bg-teal-600 transition-colors whitespace-nowrap">Voir la collection</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all" onclick="previousSlide()">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-arrow-left-line text-gray-700"></i>
+                </div>
+            </button>
+            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all" onclick="nextSlide()">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-arrow-right-line text-gray-700"></i>
+                </div>
+            </button>
+            
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-60 carousel-indicator active" onclick="goToSlide(0)"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-60 carousel-indicator" onclick="goToSlide(1)"></button>
+            </div>
+        </section>
+
+        <section class="py-16 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos catégories</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20smartphone%20with%20sleek%20design%20on%20clean%20white%20background%20minimal%20product%20photography%20professional%20lighting&width=200&height=200&seq=cat1&orientation=squarish" alt="Smartphones" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Smartphones</h3>
+                        <p class="text-sm text-gray-600">iPhone, Samsung, Huawei</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=elegant%20tablet%20device%20with%20modern%20design%20on%20clean%20white%20background%20professional%20product%20photography%20minimal%20aesthetic&width=200&height=200&seq=cat2&orientation=squarish" alt="Tablettes" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Tablettes</h3>
+                        <p class="text-sm text-gray-600">iPad, Galaxy Tab, Surface</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20laptop%20computer%20with%20sleek%20design%20on%20clean%20white%20background%20professional%20product%20photography%20minimal%20style&width=200&height=200&seq=cat3&orientation=squarish" alt="Ordinateurs" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Ordinateurs</h3>
+                        <p class="text-sm text-gray-600">MacBook, Dell, HP, Asus</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=premium%20wireless%20headphones%20and%20speakers%20on%20clean%20white%20background%20professional%20product%20photography%20minimal%20design&width=200&height=200&seq=cat4&orientation=squarish" alt="Audio" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Audio</h3>
+                        <p class="text-sm text-gray-600">Casques, Enceintes, Barres</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=collection%20of%20phone%20accessories%20cables%20chargers%20cases%20on%20clean%20white%20background%20professional%20product%20photography%20organized%20layout&width=200&height=200&seq=cat5&orientation=squarish" alt="Accessoires" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Accessoires</h3>
+                        <p class="text-sm text-gray-600">Coques, Câbles, Chargeurs</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=portable%20power%20station%20battery%20pack%20with%20modern%20design%20on%20clean%20white%20background%20professional%20product%20photography%20minimal%20aesthetic&width=200&height=200&seq=cat6&orientation=squarish" alt="Powerstation" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Powerstation</h3>
+                        <p class="text-sm text-gray-600">Batteries, Chargeurs portables</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=gaming%20accessories%20keyboard%20mouse%20headset%20on%20clean%20white%20background%20professional%20product%20photography%20minimal%20design&width=200&height=200&seq=cat7&orientation=squarish" alt="Gaming" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Gaming</h3>
+                        <p class="text-sm text-gray-600">Manettes, Claviers, Souris</p>
+                    </div>
+                    
+                    <div class="category-hover bg-white rounded-xl p-6 text-center shadow-sm cursor-pointer">
+                        <img src="https://readdy.ai/api/search-image?query=smart%20home%20devices%20and%20wearable%20technology%20on%20clean%20white%20background%20professional%20product%20photography%20modern%20minimal%20style&width=200&height=200&seq=cat8&orientation=squarish" alt="Connectés" class="w-24 h-24 object-cover object-top mx-auto mb-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-2">Objets connectés</h3>
+                        <p class="text-sm text-gray-600">Montres, Domotique</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Produits vedettes</h2>
+                    <a href="#" class="text-primary hover:text-blue-600 font-medium">Voir tout</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://readdy.ai/api/search-image?query=latest%20iPhone%20model%20with%20elegant%20design%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20smartphone&width=300&height=300&seq=prod1&orientation=squarish" alt="iPhone 15 Pro" class="w-full h-48 object-cover object-top">
+                            <span class="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 text-xs font-semibold rounded">-15%</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">iPhone 15 Pro 128GB</h3>
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="text-lg font-bold text-gray-800">1 199 €</span>
+                                <span class="text-sm text-gray-500 line-through">1 399 €</span>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://readdy.ai/api/search-image?query=Samsung%20Galaxy%20tablet%20with%20modern%20design%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20device&width=300&height=300&seq=prod2&orientation=squarish" alt="Galaxy Tab S9" class="w-full h-48 object-cover object-top">
+                            <span class="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 text-xs font-semibold rounded">Nouveau</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Samsung Galaxy Tab S9</h3>
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="text-lg font-bold text-gray-800">899 €</span>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://readdy.ai/api/search-image?query=MacBook%20laptop%20with%20sleek%20aluminum%20design%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20computer&width=300&height=300&seq=prod3&orientation=squarish" alt="MacBook Air M2" class="w-full h-48 object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">MacBook Air M2 13"</h3>
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="text-lg font-bold text-gray-800">1 399 €</span>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://readdy.ai/api/search-image?query=premium%20wireless%20headphones%20with%20modern%20design%20on%20clean%20white%20background%20professional%20product%20photography%20high-end%20audio%20equipment&width=300&height=300&seq=prod4&orientation=squarish" alt="AirPods Pro 2" class="w-full h-48 object-cover object-top">
+                            <span class="absolute top-3 left-3 bg-orange-500 text-white px-2 py-1 text-xs font-semibold rounded">Top vente</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">AirPods Pro 2ème génération</h3>
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="text-lg font-bold text-gray-800">279 €</span>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-r from-blue-500 to-primary rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Offres spéciales smartphones</h3>
+                        <p class="mb-6">Jusqu'à -30% sur une sélection de smartphones premium</p>
+                        <button class="bg-white text-primary px-6 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">Découvrir les offres</button>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-teal-500 to-secondary rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Pack gaming complet</h3>
+                        <p class="mb-6">PC + écran + périphériques à prix réduit</p>
+                        <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">Voir les packs</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Meilleures ventes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Samsung%20Galaxy%20smartphone%20with%20premium%20design%20on%20clean%20white%20background%20professional%20product%20photography%20modern%20device&width=250&height=250&seq=best1&orientation=squarish" alt="Galaxy S24" class="w-full h-40 object-cover object-top">
+                        <div class="p-3">
+                            <h4 class="font-medium text-gray-800 text-sm mb-2">Samsung Galaxy S24</h4>
+                            <span class="text-primary font-bold">949 €</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=iPad%20tablet%20with%20elegant%20design%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20device&width=250&height=250&seq=best2&orientation=squarish" alt="iPad Air" class="w-full h-40 object-cover object-top">
+                        <div class="p-3">
+                            <h4 class="font-medium text-gray-800 text-sm mb-2">iPad Air 5ème génération</h4>
+                            <span class="text-primary font-bold">699 €</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=wireless%20speaker%20with%20modern%20design%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20audio%20device&width=250&height=250&seq=best3&orientation=squarish" alt="JBL Charge 5" class="w-full h-40 object-cover object-top">
+                        <div class="p-3">
+                            <h4 class="font-medium text-gray-800 text-sm mb-2">JBL Charge 5</h4>
+                            <span class="text-primary font-bold">179 €</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=portable%20power%20bank%20with%20sleek%20design%20on%20clean%20white%20background%20professional%20product%20photography%20modern%20charging%20device&width=250&height=250&seq=best4&orientation=squarish" alt="Anker PowerCore" class="w-full h-40 object-cover object-top">
+                        <div class="p-3">
+                            <h4 class="font-medium text-gray-800 text-sm mb-2">Anker PowerCore 20000</h4>
+                            <span class="text-primary font-bold">49 €</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=gaming%20mechanical%20keyboard%20with%20RGB%20lighting%20on%20clean%20white%20background%20professional%20product%20photography%20premium%20gaming%20accessory&width=250&height=250&seq=best5&orientation=squarish" alt="Logitech MX Keys" class="w-full h-40 object-cover object-top">
+                        <div class="p-3">
+                            <h4 class="font-medium text-gray-800 text-sm mb-2">Logitech MX Keys</h4>
+                            <span class="text-primary font-bold">119 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6 bg-gray-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-truck-line text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Livraison gratuite</h3>
+                        <p class="text-gray-600 text-sm">À partir de 50 € d'achat</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-shield-check-line text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Garantie 2 ans</h3>
+                        <p class="text-gray-600 text-sm">Sur tous nos produits</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-arrow-go-back-line text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Retour 30 jours</h3>
+                        <p class="text-gray-600 text-sm">Satisfait ou remboursé</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-red-400 rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-customer-service-2-line text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Support 24/7</h3>
+                        <p class="text-gray-600 text-sm">Assistance technique</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Nos marques partenaires</h3>
+                <div class="flex items-center justify-center space-x-12 opacity-60">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-apple-fill text-2xl"></i>
+                        </div>
+                        <span class="font-semibold">Apple</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-android-fill text-2xl"></i>
+                        </div>
+                        <span class="font-semibold">Samsung</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-microsoft-fill text-2xl"></i>
+                        </div>
+                        <span class="font-semibold">Microsoft</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-google-fill text-2xl"></i>
+                        </div>
+                        <span class="font-semibold">Google</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-spotify-fill text-2xl"></i>
+                        </div>
+                        <span class="font-semibold">Sony</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl text-primary mb-4">logo</div>
+                    <p class="text-gray-300 text-sm mb-4">Votre spécialiste en électronique depuis 2010. Qualité, service et innovation.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-facebook-fill text-xl text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-twitter-fill text-xl text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-instagram-fill text-xl text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Informations</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white">À propos</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Nos magasins</a></li>
+                        <li><a href="#" class="hover:text-white">Recrutement</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Service client</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white">SAV</a></li>
+                        <li><a href="#" class="hover:text-white">Livraison</a></li>
+                        <li><a href="#" class="hover:text-white">Retours</a></li>
+                        <li><a href="#" class="hover:text-white">Garanties</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-300 mb-4">Recevez nos dernières offres et nouveautés</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email" class="flex-1 px-3 py-2 text-gray-800 rounded-l-lg border-none focus:outline-none text-sm">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-600 transition-colors">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-send-plane-line text-sm"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-sm text-gray-400 mb-4 md:mb-0">
+                        © 2024 ElectroShop. Tous droits réservés.
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-400">
+                            <span>Paiement sécurisé :</span>
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-visa-fill"></i>
+                            </div>
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-mastercard-fill"></i>
+                            </div>
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-paypal-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="bg-primary text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-all hover:scale-110" onclick="scrollToTop()">
+            <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-arrow-up-line text-xl"></i>
+            </div>
+        </button>
+    </div>
+
+    <div class="fixed bottom-6 left-6 z-50">
+        <button class="bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-teal-600 transition-all hover:scale-110">
+            <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-message-3-line text-xl"></i>
+            </div>
+        </button>
+    </div>
+
+    <script id="carousel-functionality">
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            indicators.forEach((indicator, i) => {
+                indicator.style.backgroundColor = i === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.6)';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+
+    <script id="scroll-functionality">
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
